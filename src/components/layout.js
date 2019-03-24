@@ -25,7 +25,7 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <div>
+      <Root id="root">
         <HeaderWrapper>
           <Header />
         </HeaderWrapper>
@@ -35,10 +35,15 @@ const Layout = ({ children }) => (
         <footer>
           <Footer />
         </footer>
-      </div>
+      </Root>
     )}
   />
 )
+
+// SideMenuのParent
+const Root = styled.div`
+  position: relative;
+`
 
 const HeaderWrapper = styled.div`
   margin-top: 50px;
