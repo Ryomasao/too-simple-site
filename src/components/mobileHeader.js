@@ -1,25 +1,46 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import Link from "../components/link"
+import SideMenu from "./sideMenu"
 
-const MobileHeader = ({ className }) => (
-  <Row className={className}>
-    <Column width="12%">
-      <HamburgerIcon>
-        <HamburgerLine />
-        <HamburgerLine />
-      </HamburgerIcon>
-    </Column>
-    <Column width="70%">
-      <Title>LIUBOADING</Title>
-    </Column>
-    <Column width="18%">
-      <Contact>
-        <Link href="#">Contact</Link>
-      </Contact>
-    </Column>
-  </Row>
-)
+const MobileHeader = ({ className }) => {
+  const [showSideMenu, toggle] = useState(false)
+
+  const handleClick = () => {
+    toggle(!showSideMenu)
+  }
+
+  const handleClickOutSide = () => {
+    toggle(false)
+  }
+
+  return (
+    <Wrapper className={className}>
+      <Row>
+        <Column width="12%">
+          <HamburgerIcon onClick={handleClick}>
+            <HamburgerLine />
+            <HamburgerLine />
+          </HamburgerIcon>
+        </Column>
+        <Column width="70%">
+          <Title>LIUBOADING</Title>
+        </Column>
+        <Column width="18%">
+          <Contact>
+            <Link href="#">Contact</Link>
+          </Contact>
+        </Column>
+      </Row>
+      <SideMenu
+        onClickOutSide={handleClickOutSide}
+        showSideMenu={showSideMenu}
+      />
+    </Wrapper>
+  )
+}
+
+const Wrapper = styled.div``
 
 const Row = styled.div`
   display: flex;
@@ -54,6 +75,7 @@ const HamburgerIcon = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   span:first-of-type {
     margin-bottom: 6px;
   }
