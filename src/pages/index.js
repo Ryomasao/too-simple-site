@@ -103,11 +103,14 @@ const IndexPage = () => (
 const HeroWrapper = styled.div`
   margin: 0 auto;
   width: 95%;
+  @media (max-width: 375px) {
+    width: 100%;
+  }
 `
 
 const MainText = styled.div`
   position: relative;
-  top: -40px;
+  top: -3rem;
   text-align: center;
   div:first-child {
     margin-bottom: 50px;
@@ -115,31 +118,56 @@ const MainText = styled.div`
   div:last-child {
     margin-top: 50px;
   }
+
+  @media (max-width: 375px) {
+    top: -2.3rem;
+    div:first-child {
+      margin-bottom: 30px;
+    }
+    div:last-child {
+      margin-top: 30px;
+    }
+  }
 `
 
 const Title = styled.div`
-  font-size: 70px;
+  font-size: 4rem;
+  @media (max-width: 375px) {
+    font-size: 3rem;
+  }
 `
 
 const SubTitle = styled.div`
-  font-size: 35px;
+  font-size: 2.1rem;
+
+  @media (max-width: 375px) {
+    font-size: 1.5rem;
+    line-height: 0.8;
+  }
 `
 
 const Description = styled.div`
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 0.5;
 `
 
 const AboutUs = styled.div`
   width: 22.8%;
   margin: 0 auto;
+  @media (max-width: 375px) {
+    width: 80%;
+
+    a {
+      padding: 10px 0;
+    }
+  }
 `
 
 const LinkButton = styled.a`
   width: 100%;
   color: #35363d;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 1, 5rem;
   padding: 10.5% 0;
   display: inline-block;
   border: 1px solid;
@@ -150,6 +178,19 @@ const Thumbnail = styled.div`
   margin: 0 auto;
   width: 95%;
   display: flex;
+
+  @media (max-width: 375px) {
+    width: 100%;
+    flex-direction: column;
+
+    a {
+      width: 100%;
+    }
+
+    img {
+      margin-bottom: 0.8rem;
+    }
+  }
 `
 
 const ThumbnailLink = styled.a`
@@ -161,12 +202,16 @@ const ThumbnailImage = styled.div`
   position: relative;
   width: 100%;
 
+  img {
+    display: block;
+  }
+
   &:before {
     content: "";
     position: absolute;
     background-color: rgba(0, 0, 0);
     width: 100%;
-    height: 85%;
+    height: 100%;
     opacity: 0.4;
   }
 `
@@ -182,6 +227,10 @@ const ThumbnailTextWrapper = styled.div`
 const Text = styled.p`
   color: white;
   font-size: 2rem;
+
+  @media (max-width: 375px) {
+    font-size: 2.5rem;
+  }
 `
 
 const Supplyment = styled.p`
@@ -191,12 +240,19 @@ const Supplyment = styled.p`
 
 const Infomation = styled.div`
   width: 80%;
-  margin: 0 auto;
+  margin: 30px auto 0;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 375px) {
+    display: block;
+  }
 `
 const InfomationTitleWrapper = styled.div`
   width: 25%;
+  @media (max-width: 375px) {
+    width: 100%;
+  }
 `
 
 const InfomationMainTitle = styled.p`
@@ -207,6 +263,10 @@ const InfomationSubTitle = styled.p``
 const InfomationListWrapper = styled.div`
   width: 70%;
   padding-top: 50px;
+  @media (max-width: 375px) {
+    width: 100%;
+    padding-top: 0;
+  }
 `
 
 const InfomationList = styled.ul`

@@ -1,72 +1,24 @@
 import React from "react"
-import styled from "styled-components"
-import Link from "../components/link"
+import styled, { css } from "styled-components"
+import DefaultHeader from "./defaultHeader"
+import MobileHeader from "./mobileHeader"
 
 const Header = () => (
   <header>
-    <Row>
-      <Column>
-        <Navi>
-          <List align="center">
-            <ListItem>
-              <Link href="#">Home</Link>
-            </ListItem>
-            <ListItem>
-              <Link href="#">About</Link>
-            </ListItem>
-            <ListItem>
-              <Link href="#">Service</Link>
-            </ListItem>
-          </List>
-        </Navi>
-      </Column>
-      <Column>
-        <Title>LIUBOADING</Title>
-      </Column>
-      <Column>
-        <Navi>
-          <List align="flex-end">
-            <ListItem>
-              <Link href="#">FAQ</Link>
-            </ListItem>
-            <ListItem>
-              <Link href="#">Information</Link>
-            </ListItem>
-            <ListItem>
-              <Link href="#">Contact</Link>
-            </ListItem>
-          </List>
-        </Navi>
-      </Column>
-    </Row>
+    <DefaultHeaderWrapper />
+    <MobileHeaderWrapper />
   </header>
 )
 
-const Row = styled.div`
-  display: flex;
+const DefaultHeaderWrapper = styled(DefaultHeader)`
+  @media (max-width: 375px) {
+    display: none;
+  }
 `
-
-const Column = styled.div`
-  width: 33.333%;
-`
-
-const Navi = styled.nav`
-  text-align: center;
-  height: 100%;
-`
-const Title = styled.h1`
-  text-align: center;
-`
-
-const List = styled.ul`
-  display: flex;
-  height: 100%;
-  align-items: ${props => props.align};
-`
-
-const ListItem = styled.li`
-  width: 33%;
-  list-style-type: none;
+const MobileHeaderWrapper = styled(MobileHeader)`
+  @media (min-width: 376px) {
+    display: none;
+  }
 `
 
 export default Header

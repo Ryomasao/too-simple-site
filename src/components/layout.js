@@ -42,6 +42,10 @@ const Layout = ({ children }) => (
 
 const HeaderWrapper = styled.div`
   margin-top: 50px;
+
+  @media (max-width: 375px) {
+    margin-top: 0;
+  }
 `
 
 export default Layout

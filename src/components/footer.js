@@ -28,6 +28,10 @@ const Wrapper = styled.div`
 
 const MainWrapper = styled.div`
   padding: 50px 0 150px;
+
+  @media (max-width: 375px) {
+    padding: 5px;
+  }
 `
 
 const Title = styled.p`

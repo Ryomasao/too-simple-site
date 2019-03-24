@@ -1,8 +1,28 @@
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+
+@media (max-width: 375px) {
+  html {
+    /*
+    1280px で 16px
+    */
+    font-size: 3.25vw !important;
+  }
+}
+
+@media (min-width: 376px) {
+  html {
+    /*
+    1280px で 16px
+    */
+    font-size: 1.25vw !important;
+  }
+}
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
